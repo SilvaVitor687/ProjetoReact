@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+    
+        <%- include('../partials/header') %>
+        <link rel="stylesheet" href="">
+
+    </head>
+
+    <body>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-sm-offset-3">
+                    <h1>Recuperar Senha. </h1>
+                    <hr><br>
+
+                    <%- if(success) { %>
+                        <div class="alert alert-success">
+                            <%= success %>
+                        </div>
+                    <%- } %>
+
+                    <%- if(error) { %>
+                        <div class="alert alert-danger">
+                            <%= error %>
+                        </div>
+                    <%- } %>
+
+                    <p> Digite seu email para receber as intruções de como reiniciar a sua senha</p>
+
+                    <form action="/api/v1/usuarios/recuperar-senha" method="post">
+
+                        <div class="form-group">
+                            <input type="email" name="email" class="form-control" placeholder="Digite seu email..">
+                        </div>
+
+                        <button class="btn btn-primary">
+                            Recuperar Senha
+                        </button>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+    </body>
+</html>
